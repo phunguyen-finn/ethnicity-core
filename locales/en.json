@@ -1,0 +1,57 @@
+{
+    "navigation": {
+        "home": "Home",
+        "library": "Library",
+        "discover": "Discover",
+        "store": "Store",
+        "contact": "Contact"
+    },
+    "home": {
+        "tagline1": "Cultural inheritance",
+        "tagline2": "Creative interference",
+        "patternLibrary": "Pattern Library",
+        "work": {
+            "title": "Our Work",
+            "services": "Services",
+            "projects": "Projects",
+            "media": "On Media"
+        },
+        "procedure": {
+            "title": "Our Procedure",
+            "research": {
+                "title": "Research",
+                "description": "We compile documents, connect with local communities, create field programs, take notes on weaving technology, meaning of patterns, stories and take pictures of patterns, and store data."
+            },
+            "preserve": {
+                "title": "Preserve",
+                "description": "We always focus on keeping the style and color of the patterns on brocade intact by vectorizing them and creating an online digital library. This library is open to the public to use for free, thereby promoting the beauty of this intangible cultural heritage as part of Vietnamese culture. ​THE FINAL PRODUCT IS A LIBRARY OF MORE THAN 2OO VECTOR OF PATTERN."
+            },
+            "develop": {
+                "title": "Develop",
+                "description": "We based on the original pattern of the Conservation Library to develop new patterns. These patterns are combined with modern colors and simple, subtle shapes in line with new design trends. The developed patterns are highly applicable in the modern creative industry. ​THE FINAL PRODUCT IS A LIBRARY OF MORE THAN 5O VECTOR OF MODERN PATTERN."
+            },
+            "apply": {
+                "title": "Apply",
+                "description": "To spread the beauty of the intangible cultural heritage of brocade patterns of the Central Highlands people. We build our app library with a broader community in mind, not just creative designers. This library is available to anyone for a variety of uses.​THE FINAL PRODUCT IS A LIBRARY OF MORE THAN 5O PATTERN APPLICATIONS FOR USER."
+            },
+            "illustrate": {
+                "title": "Illustrate",
+                "description": "Bring images of daily activities, special festivals or traditional details of ethnic minorities to digital illustrations. These illustrations help to convey more fully the meaning of brocade patterns of the people here.​THE FINAL PRODUCT IS A LIBRARY OF MORE THAN 3O ILLUSTRATIONS ON THE LIFE OF MINORITY PEOPLE."
+            }
+        },
+        "team": {
+            "title": "Our Team",
+            "marketing": "Marketing",
+            "creative": "Creative",
+            "research": "Research"
+        },
+        "recognition": {
+            "title": "Recognition",
+            "presentedAt": "Presented at",
+            "featuredOn": "Featured on",
+            "partnerWith": "Partner with",
+            "head": "TOP 5 NOMINEES FOR THE 2023 WECHOICE AWARD IN THE CATEGORY [Z-Project - Youth Project for Community] with the message \"Dare to be passionate, dare to be brilliant\".",
+            "body": "The project was honored to be selected as one of 10 projects in ASEAN presented to Former US President Barack Obama in 2018. Presented at the UNESCO World Heritage Committee 2019 in Azerbaijan 2019. Introduced at the 2019 SSEAYP 45th, International Youth Forum 2019 in China and Better Together Challenge 2019 in Korea. The project is honored to receive an introduction from the Goethe-Institut Ho Chi Minh City with an English article on the COLORS platform (ColorsxStudio project). The project was awarded the \"Idea for the community\" award at the Human Act Prize 2023 awards ceremony. Top 5 nominees for the 2023 WeChoice Award in the category [Z-Project - Youth Project for Community] with the message \"Dare to be passionate, dare to be brilliant\"."
+        }
+    }
+}
