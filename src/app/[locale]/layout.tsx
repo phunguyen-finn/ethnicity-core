@@ -5,14 +5,19 @@ import "@/app/globals.css";
 import { getMessages } from "next-intl/server";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import NavigationMenu from "../ui/common/NavigationMenu";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { locales } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ethnicity Vietnam",
 }
-import { AntdRegistry } from '@ant-design/nextjs-registry';
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export default async function LocaleLayout({
   children,
@@ -22,13 +27,13 @@ export default async function LocaleLayout({
   params: { locale: string };
 }>) {
   const messages = await getMessages();
+  unstable_setRequestLocale(locale);
 
   return (
     <html lang={locale}>
       <NextIntlClientProvider messages={messages}>
         <AntdRegistry>
-          <body className={inter.className}>
-            <NavigationMenu color="white" locale={locale as any} />
+          <body className={inter.className} style={{ overflowX: 'hidden' }}>
             {children}
           </body>
         </AntdRegistry>

@@ -37,10 +37,29 @@ export interface Post {
 }
 
 export const PostService = {
-    getPostsByStatus: async (status: POST_STATUS, cursor: Timestamp | undefined): Promise<[Post[], Timestamp | undefined, boolean]> => {
+    getPostsByStatus: async (status: POST_STATUS, cursor?: Timestamp): Promise<[Post[], Timestamp | undefined, boolean]> => {
         if (!cursor) cursor = Timestamp.now();
         const q = query(collection(Db, "posts"),
             where("status", "==", status),
+            orderBy("createdAt", "desc"),
+            startAfter(cursor),
+            limit(MAX_POSTS));
+        const snapshot = await getDocs(q);
+        const posts = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+            createdAt: doc.data().createdAt.toDate(),
+            updatedAt: doc.data().updatedAt.toDate()
+        })) as any;
+        const hasMore = posts.length === MAX_POSTS;
+        if (posts.length === 0) return [[], undefined, false];
+        return [posts, posts[posts.length - 1].createdAt, hasMore];
+    },
+    getPostsByLang: async (lang: LANGUAGE, cursor?: Timestamp): Promise<[Post[], Timestamp | undefined, boolean]> => {
+        if (!cursor) cursor = Timestamp.now();
+        const q = query(collection(Db, "posts"),
+            where("language", "==", lang),
+            where("status", "==", POST_STATUS.PUBLISHED),
             orderBy("createdAt", "desc"),
             startAfter(cursor),
             limit(MAX_POSTS));

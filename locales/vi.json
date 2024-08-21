@@ -38,21 +38,50 @@
             "illustrate": {
                 "title": "Minh hoạ",
                 "description": "Mang những hình ảnh sinh hoạt thường nhật, những lễ hội đặc sắc hay những chi tiết truyền thống của đồng bào thiểu số lên những tác phẩm minh hoạ số. Những tác phẩm này giúp truyền tải trọn vẹn hơn ý nghĩa hoa văn thổ cẩm của người dân nơi đây.​SẢN PHẨM CUỐI LÀ THƯ VIỆN HƠN 5O TÁC PHẨM ​MINH HOẠ SỐ ĐỜI SỐNG ĐỒNG BÀO THIỂU SỐ."
-            },
-            "team": {
-                "title": "Đội ngũ",
-                "marketing": "Truyền thông",
-                "creative": "Sáng tạo",
-                "research": "Nghiên cứu"
-            },
-            "recognition": {
-                "title": "Thành tựu",
-                "presentedAt": "Được trình bày tại",
-                "featuredOn": "Xuất hiện trên",
-                "partnerWith": "Đối tác với",
-                "head": "TOP 5 ĐỀ CỬ GIẢI THƯỞNG WECHOICE 2023 TRONG HẠNG MỤC [Z-Project - Dự án trẻ vì cộng đồng] với thông điệp \"Dám đam mê, dám rực rỡ\".",
-                "body": "Dự án vinh dự được chọn là 1 trong 10 dự án trong khối ASEAN trình bày với Nguyên Tổng Thống Mỹ Barack Obama năm 2018. Thuyết trình tại UNESCO World Heritage Committee 2019 tại Azerbaijan 2019. Giới thiệu tại SSEAYP lần thứ 45, International Youth Forum 2019 tại Trung Quốc và Better Together Challenge 2019 tại Hàn Quốc. Dự án được trao giải \"Ý tưởng vì cộng đồng\" tại lễ trao giải Human Act Prize 2023. Top 5 đề cử WeChoice Award 2023 hạng mục [Z-Project - Dự án thanh niên vì cộng đồng] với thông điệp \"Dám đam mê, dám tỏa sáng\"."
             }
+        },
+        "team": {
+            "title": "Đội ngũ",
+            "marketing": "Truyền thông",
+            "creative": "Sáng tạo",
+            "research": "Nghiên cứu"
+        },
+        "recognition": {
+            "title": "Thành tựu",
+            "presentedAt": "Được trình bày tại",
+            "featuredOn": "Xuất hiện trên",
+            "partnerWith": "Đối tác với",
+            "head": "TOP 5 ĐỀ CỬ GIẢI THƯỞNG WECHOICE 2023 TRONG HẠNG MỤC [Z-Project - Dự án trẻ vì cộng đồng] với thông điệp \"Dám đam mê, dám rực rỡ\".",
+            "body": "Dự án vinh dự được chọn là 1 trong 10 dự án trong khối ASEAN trình bày với Nguyên Tổng Thống Mỹ Barack Obama năm 2018. Thuyết trình tại UNESCO World Heritage Committee 2019 tại Azerbaijan 2019. Giới thiệu tại SSEAYP lần thứ 45, International Youth Forum 2019 tại Trung Quốc và Better Together Challenge 2019 tại Hàn Quốc. Dự án được trao giải \"Ý tưởng vì cộng đồng\" tại lễ trao giải Human Act Prize 2023. Top 5 đề cử WeChoice Award 2023 hạng mục [Z-Project - Dự án thanh niên vì cộng đồng] với thông điệp \"Dám đam mê, dám tỏa sáng\".",
+            "contact": "Liên hệ"
         }
+    },
+    "library": {
+        "title": "Thư viện Ethnicity có gì?",
+        "preserve": {
+            "title": "Hoa văn Bảo tồn",
+            "description": "Chúng tôi luôn chú trọng để giữ lại nguyên vẹn kiểu dáng và màu sắc của hoa văn trên thổ cẩm bằng vector hoá chúng và tạo thành một thư viện số trực tuyến. Thư viện này được mở cho cộng đồng sử dụng cách miễn phí từ đó quảng bá vẻ đẹp của di sản văn hoá phi vật thể này như một phần của văn hoá Việt."
+        },
+        "develop": {
+            "title": "Hoa văn Phát triển",
+            "description": "Chúng tôi dựa trên hoa văn gốc của Thư viện Bảo tồn để phát triển thêm những hoa văn mới. Những hoa văn này được kết hợp với màu sắc hiện đại và hình khối đơn giản, tinh tế phù hợp với xu hướng thiết kế mới. Những hoa văn phát triển có tính ứng dụng cao trong ngành công nghiệp sáng tạo hiện đại."
+        },
+        "apply": {
+            "title": "Thư viện ứng dụng",
+            "description": "Để lan toả nét đẹp di sản văn hoá phi vật thể hoa văn thổ cẩm của người đồng bào Tây Nguyên. Chúng tôi xây dựng thư viện ứng dụng để hướng tới một cộng đồng lớn hơn, không chỉ là những nhà thiết kế sáng tạo. Thư viện này sẵn dùng cho bất kì ai ở nhiều mục đích sử dụng khác nhau."
+        },
+        "illustrate": {
+            "title": "Thư viện minh họa",
+            "description": "Mang những hình ảnh sinh hoạt thường nhật, những lễ hội đặc sắc hay những chi tiết truyền thống của đồng bào thiểu số lên những tác phẩm minh hoạ số. Những tác phẩm này giúp truyền tải trọn vẹn hơn ý nghĩa hoa văn thổ cẩm của người dân nơi đây."
+        },
+        "seePatterns": "Xem Hoa văn",
+        "seeCollections": "Bộ sưu tập"
+    },
+    "posts": {
+        "noMorePosts": "Đã hết bài viết rồi bạn ơi",
+        "noPosts": "Xin lỗi, chưa có bài viết nào trong mục này... Quay lại sau nhé!",
+        "createdAt": "Được đăng vào",
+        "more": "Xem thêm từ Ethnicity",
+        "contact": "Liên hệ"
     }
 }

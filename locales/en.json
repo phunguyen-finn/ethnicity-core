@@ -46,12 +46,41 @@
             "research": "Research"
         },
         "recognition": {
-            "title": "Recognition",
+            "title": "Our Recognition",
             "presentedAt": "Presented at",
             "featuredOn": "Featured on",
             "partnerWith": "Partner with",
             "head": "TOP 5 NOMINEES FOR THE 2023 WECHOICE AWARD IN THE CATEGORY [Z-Project - Youth Project for Community] with the message \"Dare to be passionate, dare to be brilliant\".",
-            "body": "The project was honored to be selected as one of 10 projects in ASEAN presented to Former US President Barack Obama in 2018. Presented at the UNESCO World Heritage Committee 2019 in Azerbaijan 2019. Introduced at the 2019 SSEAYP 45th, International Youth Forum 2019 in China and Better Together Challenge 2019 in Korea. The project is honored to receive an introduction from the Goethe-Institut Ho Chi Minh City with an English article on the COLORS platform (ColorsxStudio project). The project was awarded the \"Idea for the community\" award at the Human Act Prize 2023 awards ceremony. Top 5 nominees for the 2023 WeChoice Award in the category [Z-Project - Youth Project for Community] with the message \"Dare to be passionate, dare to be brilliant\"."
+            "body": "The project was honored to be selected as one of 10 projects in ASEAN presented to Former US President Barack Obama in 2018. Presented at the UNESCO World Heritage Committee 2019 in Azerbaijan 2019. Introduced at the 2019 SSEAYP 45th, International Youth Forum 2019 in China and Better Together Challenge 2019 in Korea. The project is honored to receive an introduction from the Goethe-Institut Ho Chi Minh City with an English article on the COLORS platform (ColorsxStudio project). The project was awarded the \"Idea for the community\" award at the Human Act Prize 2023 awards ceremony. Top 5 nominees for the 2023 WeChoice Award in the category [Z-Project - Youth Project for Community] with the message \"Dare to be passionate, dare to be brilliant\".",
+            "contact": "Contact"
         }
+    },
+    "library": {
+        "title": "What's in Ethnicity Library?",
+        "preserve": {
+            "title": "Preserve Pattern",
+            "description": "Original brocade patterns vectorized from photos. The patterns are made with high accuration to every stitch"
+        },
+        "develop": {
+            "title": "Develop Pattern",
+            "description": "Patterns customized with simple shapes and youthful colors to fit well with modern design"
+        },
+        "apply": {
+            "title": "Apply Library",
+            "description": "Patterns used in different products such as Powerpoint Templates, CV templates, etc."
+        },
+        "illustrate": {
+            "title": "Illustrate Library",
+            "description": "Illustrations of ethnic groups to describe how brocade patterns are used in their daily activities"
+        },
+        "seePatterns": "See Patterns",
+        "seeCollections": "See Collections"
+    },
+    "posts": {
+        "noMorePosts": "No more post",
+        "noPosts": "Sorry, there's no posts of this category yet... Come back later!",
+        "createdAt": "Created on",
+        "more": "More from Ethnicity",
+        "contact": "Contact"
     }
 }

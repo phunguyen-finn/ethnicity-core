@@ -1,41 +1,71 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import Slider from "react-slick";
+import LandingSection from '../ui/components/LandingSection';
+import WorkSection from '../ui/components/WorkSection';
+import NavigationMenu from '../ui/common/NavigationMenu';
+import useMediaQuery from '../hooks/useMediaQuery';
+import ProcedureSection from '../ui/components/ProcedureSection';
+import RecognitionSection from '../ui/components/RecognitionSection';
 
-export default function HomePage() {
+const navTheme: ('white' | 'black')[] = ["white", "black", "white", "black", "black"];
+
+export default function HomePage({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
+  const [section, setSection] = useState(0);
+  const isBreakPoint = useMediaQuery(600)
+  const sliderRef = useRef<any>(null);
+
+  const handleWheel = (e: WheelEvent) => {
+    if (e.deltaY > 0 && sliderRef.current) {
+      sliderRef.current.slickNext();
+    } else if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const handleBeforeChange = (_: any, newIndex: any) => {
+    setSection(newIndex);
+  };
+
+  useEffect(() => {
+    window.addEventListener("wheel", handleWheel);
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, []);
 
 
-  const t = useTranslations('home');
-  return <div className='h-screen w-screen flex flex-row items-center'>
-    <Image
-      className='-z-10'
-      src="/images/landing_background.png"
-      alt="Landing background"
-      layout="fill"
-      objectFit="cover"
-      objectPosition='bottom left'
-    />
-    <Slider
-      vertical
-      autoplaySpeed={2000}
-      arrows={false}
-      autoplay={true}
-      draggable={false}
-      pauseOnHover={false}
-      className='w-screen px-4 sm:px-8 xl:px-10'
-    >
-      <h1 className="text-white py-2 sm:py-4 xl:py-8 text-3xl sm:text-5xl xl:text-7xl leading-normal">{t('tagline1')}</h1>
-      <h1 className="text-white py-2 sm:py-4 xl:py-8 text-3xl sm:text-5xl xl:text-7xl leading-normal">{t('tagline2')}</h1>
-    </Slider>
-    <Image
-      src="/images/landing_pattern.png"
-      alt="Pattern"
-      width={915}
-      height={764}
-      className='w-[400px] h-auto'
-
-    />
-  </div>;
+  return <>
+    {
+      isBreakPoint && <>
+        <NavigationMenu color="white" background locale={locale as any} />
+        <LandingSection />
+        <WorkSection />
+        <ProcedureSection />
+        <RecognitionSection />
+      </>
+    }
+    {
+      !isBreakPoint && <>
+        <NavigationMenu color={navTheme[section]} locale={locale as any} />
+        <Slider
+          ref={sliderRef}
+          verticalSwiping={true}
+          draggable={true}
+          speed={800}
+          vertical
+          arrows={false}
+          infinite={false}
+          touchMove={true}
+          slidesToShow={1}
+          beforeChange={handleBeforeChange}
+          className='h-screen w-screen relative overflow-hidden'
+        >
+          <LandingSection />
+          <WorkSection />
+          <ProcedureSection />
+          <RecognitionSection />
+        </Slider>
+      </>
+    }
+  </>
 }

@@ -1,6 +1,5 @@
 'use client'
 
-import useMediaQuery from "@/app/hooks/useMediaQuery";
 import Drawer from 'antd/es/drawer';
 import Menu from "antd/es/menu";
 import Switch from 'antd/es/switch';
@@ -8,8 +7,7 @@ import { Link, usePathname, useRouter } from "@/app/navigation";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Suspense, useState } from "react";
-import { default as AbsoluteLink } from "next/link";
+import { useState } from "react";
 
 const items = [
     {
@@ -44,7 +42,7 @@ const Burger = (props: any) => {
     </svg>
 };
 
-export default function NavigationMenu({ color, locale }: { color: 'black' | 'white', locale: 'vi' | 'en' }) {
+export default function NavigationMenu({ color, locale, background }: { color: 'black' | 'white', locale: 'vi' | 'en', background?: boolean }) {
     const t = useTranslations("navigation");
     const [open, setOpen] = useState(false);
     const pathname = usePathname();
@@ -62,25 +60,29 @@ export default function NavigationMenu({ color, locale }: { color: 'black' | 'wh
         router.replace(pathname, { locale: locale });
     }
 
-    return <div className="flex flex-row w-screen h-12 md:h-24 justify-between px-6 sm:px-12 font-medium text-lg fixed top-0 left-0">
+    return <div
+        className={
+            clsx("flex flex-row w-screen h-24 sm:h-24 justify-between px-6 sm:px-12 font-medium text-lg fixed top-0 left-0 z-10 max-w-[1920px] m-auto left-[50%] -translate-x-1/2",
+                (background && color == 'white') ? 'bg-gradient-to-b from-slate-400 to-transparent' : null
+            )}>
         <>
             <Image
-                src="./logo.svg"
+                src="/logo.svg"
                 width={200}
                 height={76}
                 alt='Ethnicity Vietnam logo'
-                style={{ filter: `brightness(${color == 'black' ? '0' : '1000%'})` }}
-                className="hidden xl:block"
+                style={{ filter: `brightness(${color == 'black' ? '100%' : '1000%'})` }}
+                className="hidden lg:block transition-all duration-1000"
             />
-            <div className={clsx("justify-between w-1/2 items-center hidden xl:flex xl:flex-row", color === 'black' ? 'text-black' : 'text-white')}>
-                {items.map(({ key, to }) => <Link key={key} href={to}>{t(key)}</Link>)}
+            <div className={clsx("justify-between lg:w-8/12 xl:w-1/2 items-center hidden lg:flex lg:flex-row transition-all duration-1000", color === 'black' ? 'text-black' : 'text-white')}>
+                {items.map(({ key, to }) => <Link key={key} href={to} className='hover:text-blue-500'>{t(key)}</Link>)}
                 <Switch checkedChildren="VI" unCheckedChildren="EN" onChange={onChangeLanguage} defaultValue={locale == 'vi'} />
             </div>
         </>
 
         <>
-            <Image className="block xl:hidden" src="./logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '0' : '1000%'})` }} />
-            <div className="flex flex-row justify-end w-1/2 items-center block xl:hidden" style={{ filter: `brightness(${color == 'black' ? '0' : '1000%'})` }} >
+            <Image className="block lg:hidden transition-all duration-1000" src="/logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '100%' : '1000%'})` }} />
+            <div className="flex flex-row justify-end w-1/2 items-center block lg:hidden transition-all duration-1000" style={{ filter: `brightness(${color == 'black' ? '0' : '1000%'})` }} >
                 <Burger onClick={showDrawer} className="cursor-pointer" />
             </div>
             <Drawer onClose={onClose} open={open} width={200} styles={{ body: { padding: 0 } }}>

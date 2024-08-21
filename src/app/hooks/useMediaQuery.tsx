@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-export default function useMediaQuery(width: number) {
-    const [targetReached, setTargetReached] = useState(true);
+export default function useMediaQuery(height: number) {
+    const [targetReached, setTargetReached] = useState(false);
 
     const updateTarget = useCallback((e: any) => {
         if (e.matches) {
@@ -14,7 +14,7 @@ export default function useMediaQuery(width: number) {
     }, []);
 
     useEffect(() => {
-        const media = window.matchMedia(`(max-width: ${width}px)`);
+        const media = window.matchMedia(`(max-height: ${height}px)`);
         media.addEventListener('change', updateTarget);
 
         if (media.matches) {
