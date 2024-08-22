@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, orderBy, query, startAfter, limit, Timestamp } from "firebase/firestore/lite";
+import { collection, doc, getDoc, getDocs, orderBy, query, startAfter, limit, Timestamp, where } from "firebase/firestore/lite";
 import { Db } from "@/services/firebase";
 
 const MAX_COLLECTIONS = 9;
@@ -40,6 +40,7 @@ export const CollectionService = {
     getCollectionsByLanguage: async (language: LANGUAGE, cursor?: Timestamp): Promise<[Collection[], Timestamp | undefined, boolean]> => {
         if (!cursor) cursor = Timestamp.now();
         const q = query(collection(Db, "collections"),
+            where("language", "==", language),
             orderBy("createdAt", "desc"),
             startAfter(cursor),
             limit(MAX_COLLECTIONS));
