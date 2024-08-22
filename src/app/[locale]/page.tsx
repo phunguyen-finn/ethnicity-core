@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Slider from "react-slick";
 import LandingSection from '../ui/components/LandingSection';
 import WorkSection from '../ui/components/WorkSection';
@@ -16,23 +16,22 @@ export default function HomePage({ params: { locale } }: Readonly<{ params: { lo
   const isBreakPoint = useMediaQuery(600)
   const sliderRef = useRef<any>(null);
 
-  const handleWheel = (e: WheelEvent) => {
+  const handleWheel = useCallback((e: WheelEvent) => {
     if (e.deltaY > 0 && sliderRef.current) {
       sliderRef.current.slickNext();
     } else if (sliderRef.current) {
       sliderRef.current.slickPrev();
     }
-  };
+  }, []);
 
   const handleBeforeChange = (_: any, newIndex: any) => {
     setSection(newIndex);
   };
 
   useEffect(() => {
-    window.addEventListener("wheel", handleWheel);
+    window.addEventListener("wheel", handleWheel, true);
     return () => window.removeEventListener("wheel", handleWheel);
   }, []);
-
 
   return <>
     {
@@ -61,7 +60,7 @@ export default function HomePage({ params: { locale } }: Readonly<{ params: { lo
           className='h-screen w-screen relative overflow-hidden'
         >
           <LandingSection />
-          <WorkSection />
+          <WorkSection handleWheel={handleWheel} />
           <ProcedureSection />
           <RecognitionSection />
         </Slider>

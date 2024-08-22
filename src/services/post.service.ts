@@ -55,6 +55,20 @@ export const PostService = {
         if (posts.length === 0) return [[], undefined, false];
         return [posts, posts[posts.length - 1].createdAt, hasMore];
     },
+    getPostsByCategory: async (category: POST_CATEGORY): Promise<Post[]> => {
+        const q = query(collection(Db, "posts"),
+            where("category", "==", category),
+            where("status", "==", POST_STATUS.PUBLISHED),
+            orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+        const posts = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+            createdAt: doc.data().createdAt.toDate(),
+            updatedAt: doc.data().updatedAt.toDate()
+        })) as any;
+        return posts;
+    },
     getPostsByLang: async (lang: LANGUAGE, cursor?: Timestamp): Promise<[Post[], Timestamp | undefined, boolean]> => {
         if (!cursor) cursor = Timestamp.now();
         const q = query(collection(Db, "posts"),

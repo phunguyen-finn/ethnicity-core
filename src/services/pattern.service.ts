@@ -49,6 +49,43 @@ export const PatternService = {
         if (patterns.length === 0) return [[], undefined, false];
         return [patterns, patterns[patterns.length - 1].createdAt, hasMore];
     },
+    getPatternsByLanguage: async (language: LANGUAGE, cursor?: Timestamp): Promise<[Pattern[], Timestamp | undefined, boolean]> => {
+        if (!cursor) cursor = Timestamp.now();
+        const q = query(collection(Db, "patterns"),
+            where("language", "==", language),
+            orderBy("createdAt", "desc"),
+            startAfter(cursor),
+            limit(MAX_PATTERNS));
+        const snapshot = await getDocs(q);
+        const patterns = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+            createdAt: doc.data().createdAt.toDate(),
+            updatedAt: doc.data().updatedAt.toDate()
+        })) as any;
+        const hasMore = patterns.length === MAX_PATTERNS;
+        if (patterns.length === 0) return [[], undefined, false];
+        return [patterns, patterns[patterns.length - 1].createdAt, hasMore];
+    },
+    getPatternsByCategoryAndLanguage: async (category: PATTERN_CATEGORY, language: LANGUAGE, cursor?: Timestamp): Promise<[Pattern[], Timestamp | undefined, boolean]> => {
+        if (!cursor) cursor = Timestamp.now();
+        const q = query(collection(Db, "patterns"),
+            where("category", "==", category),
+            where("language", "==", language),
+            orderBy("createdAt", "desc"),
+            startAfter(cursor),
+            limit(MAX_PATTERNS));
+        const snapshot = await getDocs(q);
+        const patterns = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+            createdAt: doc.data().createdAt.toDate(),
+            updatedAt: doc.data().updatedAt.toDate()
+        })) as any;
+        const hasMore = patterns.length === MAX_PATTERNS;
+        if (patterns.length === 0) return [[], undefined, false];
+        return [patterns, patterns[patterns.length - 1].createdAt, hasMore];
+    },
     getPatternsByCollection: async (collectionId: string): Promise<Pattern[]> => {
         const q = query(collection(Db, "patterns"),
             where("collectionId", "==", collectionId),

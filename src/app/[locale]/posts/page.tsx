@@ -1,4 +1,4 @@
-import PostService, { LANGUAGE } from "@/services/post.service";
+import PostService from "@/services/post.service";
 import PostsPage from "@/app/ui/pages/Posts/PostsPage";
 
 export const Posts: React.FC = async ({ params: { locale } }: any) => {

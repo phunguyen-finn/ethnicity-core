@@ -19,7 +19,7 @@ export default function RecognitionSection() {
                     alt="Procedure decoration"
                     className="z-0"
                 />
-                <div className="h-10/12 relative w-11/12 sm:10/12 lg:w-7/12 flex flex-col justify-center items-center">
+                <div className="h-10/12 relative w-11/12 sm:10/12 lg:w-8/12 xl:w-7/12 flex flex-col justify-center items-center">
                     <h1 className='text-black text-3xl sm:text-5xl leading-normal'>{t('title')}</h1>
                     <div className='flex flex-col md:flex-row w-full justify-between mt-5'>
                         <div className="relative p-5 border-[1px] border-rose-500 md:w-8/12">
@@ -72,7 +72,7 @@ export default function RecognitionSection() {
                         </div>
                     </div>
                 </div>
-                <Link href="/contact" className="bg-red-600 h-[32px] md:h-[40px] w-full absolute bottom-0 flex flex-col items-center justify-center">
+                <Link href="/contact" className="bg-red-600 h-[32px] md:h-[40px] w-full absolute bottom-0 flex flex-col items-center justify-center py-2">
                     <span className="text-white text-xs md:text-lg">{t('contact')}</span>
                 </Link>
             </div>

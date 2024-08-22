@@ -3,7 +3,7 @@
 import Drawer from 'antd/es/drawer';
 import Menu from "antd/es/menu";
 import Switch from 'antd/es/switch';
-import { Link, usePathname, useRouter } from "@/app/navigation";
+import { Link, redirect, usePathname, useRouter } from "@/app/navigation";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -72,7 +72,8 @@ export default function NavigationMenu({ color, locale, background }: { color: '
                 height={76}
                 alt='Ethnicity Vietnam logo'
                 style={{ filter: `brightness(${color == 'black' ? '100%' : '1000%'})` }}
-                className="hidden lg:block transition-all duration-1000"
+                className="hidden lg:block transition-all duration-1000 cursor-pointer"
+                onClick={() => router.push('/')}
             />
             <div className={clsx("justify-between lg:w-8/12 xl:w-1/2 items-center hidden lg:flex lg:flex-row transition-all duration-1000", color === 'black' ? 'text-black' : 'text-white')}>
                 {items.map(({ key, to }) => <Link key={key} href={to} className='hover:text-blue-500'>{t(key)}</Link>)}
@@ -81,14 +82,16 @@ export default function NavigationMenu({ color, locale, background }: { color: '
         </>
 
         <>
-            <Image className="block lg:hidden transition-all duration-1000" src="/logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '100%' : '1000%'})` }} />
+            <Image
+                onClick={() => router.push('/')}
+                className="cursor-pointer block lg:hidden transition-all duration-1000" src="/logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '100%' : '1000%'})` }} />
             <div className="flex flex-row justify-end w-1/2 items-center block lg:hidden transition-all duration-1000" style={{ filter: `brightness(${color == 'black' ? '0' : '1000%'})` }} >
                 <Burger onClick={showDrawer} className="cursor-pointer" />
             </div>
             <Drawer onClose={onClose} open={open} width={200} styles={{ body: { padding: 0 } }}>
                 <Menu>
                     {items.map(({ key, to }) => <Menu.Item key={key}><Link href={to}>{t(key)}</Link></Menu.Item>)}
-                    <Menu.Item><Switch className="ml-5" checkedChildren="VI" unCheckedChildren="EN" onChange={onChangeLanguage} defaultValue={locale == 'vi'} /></Menu.Item>
+                    <Menu.Item key="lang"><Switch className="ml-5" checkedChildren="VI" unCheckedChildren="EN" onChange={onChangeLanguage} defaultValue={locale == 'vi'} /></Menu.Item>
                 </Menu>
             </Drawer>
         </>

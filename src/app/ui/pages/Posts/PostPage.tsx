@@ -42,9 +42,9 @@ export default function PostPage({ post, morePosts }: { post: Post, morePosts: P
                 ))
             }
             <div className="mt-10" />
-            <Link href="/contact" className="bg-red-600 h-[32px] md:h-[40px] w-full flex flex-col items-center justify-center">
-                <span className="text-white text-xs md:text-lg">{t('contact')}</span>
-            </Link>
         </div>
+        <Link href="/contact" className="bg-red-600 h-[32px] md:h-[40px] w-full flex flex-col items-center justify-center py-2">
+            <span className="text-white text-xs md:text-lg">{t('contact')}</span>
+        </Link>
     </div>
 }

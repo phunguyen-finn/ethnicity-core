@@ -32,7 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/[locale]/posts/[postId]"
+    "src/app/[locale]/posts/[postId]",
+    "src/app/[locale]/patterns/[patternId]"
   ],
   "exclude": [
     "node_modules"

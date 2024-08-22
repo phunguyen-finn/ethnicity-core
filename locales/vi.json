@@ -15,7 +15,9 @@
             "title": "Dự án",
             "projects": "Dự án",
             "services": "Dịch vụ",
-            "media": "Truyền thông"
+            "media": "Truyền thông",
+            "createdAt": "Được đăng vào",
+            "noPosts": "Xin lỗi, chưa có bài viết nào trong mục này... Quay lại sau nhé!"
         },
         "procedure": {
             "title": "Quy trình",
@@ -83,5 +85,48 @@
         "createdAt": "Được đăng vào",
         "more": "Xem thêm từ Ethnicity",
         "contact": "Liên hệ"
+    },
+    "contact": {
+        "title": "Liên hệ",
+        "website": "Trang web",
+        "fanpage": "Trang fanpage",
+        "email": "Địa chỉ email",
+        "links": "Đường dẫn",
+        "planner": "Quản lý dự án",
+        "phone": "Số điện thoại",
+        "sendUsALetter": "Gửi tin nhắn cho chúng tôi",
+        "sender": "Tên người gửi",
+        "message": "Nội dung tin nhắn",
+        "subject": "Tiêu đề email",
+        "send": "Gửi",
+        "content": {
+            "website": "https://ethnicityviet.com",
+            "fanpage": "https://www.facebook.com/Ethnicity.Vietnam",
+            "email": "ethnicityviet@gmail.com",
+            "planner": "Hoàng Trần Thảo Vy",
+            "phone": "(+84) 972 799 364"
+        },
+        "success": "Tin nhắn của bạn đã được gửi thành công!",
+        "error": "Có lỗi xảy ra khi gửi tin nhắn.",
+        "successSubtitle": "Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.",
+        "errorSubtitle": "Nếu vấn đề vẫn tiếp tục, vui lòng liên hệ với chúng tôi qua những kênh khác.",
+        "backToHome": "Quay lại trang chủ",
+        "required": "Trường này không được để trống",
+        "typeEmail": "Vui lòng nhập đúng địa chỉ email"
+    },
+    "patterns": {
+        "all": "Tất cả",
+        "preserve": "Bảo tồn",
+        "develop": "Phát triển",
+        "apply": "Ứng dụng",
+        "illustrate": "Minh họa",
+        "collections": "Bộ sưu tập",
+        "noMorePatterns": "Đã hết hoa văn rồi bạn ơi",
+        "noItems": "Xin lỗi, chúng tôi vẫn đang cập nhật mục này... Quay lại sau nhé!",
+        "loading": "Đang tải...",
+        "download": "Tải về",
+        "createdAt": "Được tải lên vào",
+        "category": "Danh mục",
+        "contact": "Liên hệ"
     }
 }

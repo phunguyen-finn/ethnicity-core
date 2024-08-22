@@ -13,6 +13,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ethnicity Vietnam",
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export function generateStaticParams() {

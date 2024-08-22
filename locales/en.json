@@ -14,7 +14,9 @@
             "title": "Our Work",
             "services": "Services",
             "projects": "Projects",
-            "media": "On Media"
+            "media": "On Media",
+            "createdAt": "Created on",
+            "noPosts": "Sorry, there's no posts of this category yet... Come back later!"
         },
         "procedure": {
             "title": "Our Procedure",
@@ -77,10 +79,53 @@
         "seeCollections": "See Collections"
     },
     "posts": {
-        "noMorePosts": "No more post",
+        "noMorePosts": "You've reached the end",
         "noPosts": "Sorry, there's no posts of this category yet... Come back later!",
         "createdAt": "Created on",
         "more": "More from Ethnicity",
+        "contact": "Contact"
+    },
+    "contact": {
+        "title": "Contact",
+        "website": "Website",
+        "fanpage": "Fanpage",
+        "email": "Email",
+        "links": "Links",
+        "planner": "Strategic planner",
+        "phone": "Phone",
+        "sendUsALetter": "Send us a letter",
+        "sender": "Sender",
+        "message": "Message",
+        "subject": "Subject",
+        "send": "Send",
+        "content": {
+            "website": "https://ethnicityviet.com",
+            "fanpage": "https://www.facebook.com/Ethnicity.Vietnam",
+            "email": "ethnicityviet@gmail.com",
+            "planner": "Hoang Tran Thao Vy",
+            "phone": "(+84) 972 799 364"
+        },
+        "success": "Your message has been sent successfully!",
+        "error": "There was an error sending your message. Please try again.",
+        "successSubtitle": "We will reach out to you soon.",
+        "errorSubtitle": "If the problem persists, please contact us via other channels.",
+        "backToHome": "Back to Home",
+        "required": "This field is required",
+        "typeEmail": "Please type a valid email"
+    },
+    "patterns": {
+        "all": "All",
+        "preserve": "Preserve",
+        "develop": "Develop",
+        "apply": "Apply",
+        "illustrate": "Illustrate",
+        "collections": "Collections",
+        "noMorePatterns": "You've reached the end",
+        "noItems": "Sorry, we're still updating this category... Come back later!",
+        "loading": "Loading...",
+        "download": "Download",
+        "createdAt": "Uploaded on",
+        "category": "Category",
         "contact": "Contact"
     }
 }
