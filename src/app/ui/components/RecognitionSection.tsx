@@ -17,7 +17,6 @@ export default function RecognitionSection() {
                     objectFit="cover"
                     objectPosition="top left"
                     alt="Procedure decoration"
-                    className="z-0"
                 />
                 <div className="h-10/12 relative w-11/12 sm:10/12 lg:w-8/12 xl:w-7/12 flex flex-col justify-center items-center">
                     <h1 className='text-black text-3xl sm:text-5xl leading-normal'>{t('title')}</h1>
@@ -37,13 +36,13 @@ export default function RecognitionSection() {
                                 alt="Decoration"
                                 className="absolute bottom-0 right-0 rotate-180 translate-x-[25%] translate-y-[25%]"
                             />
-                            <p className="font-bold text-xs sm:text-base text-justify">{t('head')}</p>
-                            <p className="mt-5 text-xs sm:text-base text-justify">{t('body')}</p>
+                            <p className="font-bold text-xs sm:text-base text-justify relative z-10">{t('head')}</p>
+                            <p className="mt-5 text-xs sm:text-base text-justify relative z-10">{t('body')}</p>
                         </div>
 
                         <div>
                             <div className="w-full flex flex-col items-center mt-5">
-                                <h3>{t('presentedAt')}</h3>
+                                <h3 className="relative z-10">{t('presentedAt')}</h3>
                                 <Image
                                     src="/images/presented_at.png"
                                     alt="Featured on"
@@ -52,7 +51,7 @@ export default function RecognitionSection() {
                                 />
                             </div>
                             <div className="w-full flex flex-col items-center mt-5">
-                                <h3>{t('featuredOn')}</h3>
+                                <h3 className="relative z-10">{t('featuredOn')}</h3>
                                 <Image
                                     src="/images/featured_on.png"
                                     alt="Featured on"
@@ -61,7 +60,7 @@ export default function RecognitionSection() {
                                 />
                             </div>
                             <div className="w-full flex flex-col items-center mt-5">
-                                <h3>{t('partnerWith')}</h3>
+                                <h3 className="relative z-10">{t('partnerWith')}</h3>
                                 <Image
                                     src="/images/partner_with.png"
                                     alt="Featured on"
