@@ -82,9 +82,11 @@ export default function NavigationMenu({ color, locale, background }: { color: '
         </>
 
         <>
-            <Image
-                onClick={() => router.push('/')}
-                className="cursor-pointer block lg:hidden transition-all duration-1000" src="/logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '100%' : '2000%'})` }} />
+            <div className="flex flex-row justify-start w-1/2 items-center block lg:hidden transition-all duration-1000" style={{ filter: `brightness(${color == 'black' ? '0' : '2000%'})` }} >
+                <Image
+                    onClick={() => router.push('/')}
+                    className="cursor-pointer block lg:hidden transition-all duration-1000" src="/logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '100%' : '2000%'})` }} />
+            </div>
             <div className="flex flex-row justify-end w-1/2 items-center block lg:hidden transition-all duration-1000" style={{ filter: `brightness(${color == 'black' ? '0' : '2000%'})` }} >
                 <Burger onClick={showDrawer} className="cursor-pointer" />
             </div>
