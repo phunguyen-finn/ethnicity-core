@@ -48,7 +48,7 @@ export default function Contact({ params: { locale } }: Readonly<{ params: { loc
                             title={t("success")}
                             subTitle={t("successSubtitle")}
                             extra={[
-                                <Link href="/">
+                                <Link key={"backHomeButtonSuccess"} href="/">
                                     <Button type="primary">
                                         {t("backToHome")}
                                     </Button>
@@ -62,7 +62,7 @@ export default function Contact({ params: { locale } }: Readonly<{ params: { loc
                             title={t("error")}
                             subTitle={t("errorSubtitle")}
                             extra={[
-                                <Link href="/">
+                                <Link key={"backHomeButtonError"} href="/">
                                     <Button type="primary">
                                         {t("backToHome")}
                                     </Button>

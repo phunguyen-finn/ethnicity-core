@@ -36,7 +36,7 @@ export default function PostsPage({ initPosts, initCursor, initHasMore, lang }: 
             <div className="hidden md:grid md:w-8/12 grid-cols-3 lg:w-[700px] h-[300px] gap-3">
                 {
                     posts.slice(0, 3).map(post => (
-                        <Link href={`/posts/${post.id}`} className="group col-span-1 relative">
+                        <Link key={post.id + "latest"} href={`/posts/${post.id}`} className="group col-span-1 relative">
                             <h3 className="group-hover:text-blue-500 absolute bottom-0 text-white text-sm z-10 line-clamp-2 text-ellipsis font-bold max-h-[50px] p-2">{post.title}</h3>
                             <div className="w-full h-full absolute z-[1] bg-gradient-to-t from-gray-900 to-transparent" />
                             <Image
