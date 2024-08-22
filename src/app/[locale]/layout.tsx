@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { Metadata } from "next";
 import "@/app/globals.css";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
@@ -11,11 +11,19 @@ import { locales } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Ethnicity Vietnam",
-  icons: {
-    icon: '/favicon.ico',
-  },
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const t = await getTranslations('home');
+
+  return {
+    title: params.locale == 'en' ? "Ethnicity Vietnam" : "Ethnicity Việt Nam",
+    description: t('recognition.body'),
+    robots: 'index, follow',
+    openGraph: {
+      title: "Ethnicity Vietnam",
+      description: t('recognition.body'),
+      images: ['logo.svg']
+    },
+  }
 }
 
 export function generateStaticParams() {

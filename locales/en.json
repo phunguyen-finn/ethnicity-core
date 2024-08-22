@@ -143,7 +143,8 @@
         "patterns": "Patterns",
         "products": "Products",
         "posts": "Posts",
-        "collections": "Collections"
+        "collections": "Collections",
+        "contact": "Contact"
     },
     "collections": {
         "noMoreCollections": "You've reached the end",

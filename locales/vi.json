@@ -144,7 +144,8 @@
         "patterns": "Hoa văn",
         "products": "Sản phẩm",
         "posts": "Bài viết",
-        "collections": "Bộ sưu tập"
+        "collections": "Bộ sưu tập",
+        "contact": "Liên hệ"
     },
     "collections": {
         "noMoreCollections": "Đã hết bộ sưu tập rồi bạn ơi",

@@ -3,6 +3,20 @@ import { CollectionsList } from "@/app/ui/pages/Collections/CollectionsList";
 import CollectionService from "@/services/collection.service";
 import { Breadcrumb } from "antd";
 import { getTranslations } from "next-intl/server";
+import { Metadata, ResolvingMetadata } from "next";
+
+export async function generateMetadata(
+    { params, searchParams }: any,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const t = await getTranslations('breadcrumbs');
+    const parentMetadata: any = await parent;
+
+    return {
+        ...parentMetadata,
+        title: t('collections'),
+    }
+}
 
 export default async function Collections({ params: { locale } }: Readonly<{
     params: { locale: 'vi' | 'en' }

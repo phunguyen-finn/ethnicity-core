@@ -3,6 +3,34 @@ import { redirect } from "@/app/navigation";
 import PostPage from "@/app/ui/pages/Posts/PostPage";
 import sanitizeHtml from 'sanitize-html';
 import { Timestamp } from "firebase/firestore/lite";
+import { Metadata } from "next";
+
+export async function generateMetadata(
+    { params }: any
+): Promise<Metadata> {
+    const post = await PostService.getPost(params.postId);
+
+    if (!post) {
+        return {
+            title: '404',
+        }
+    }
+
+    return {
+        title: post!.title,
+        description: post!.description,
+        robots: 'index, follow',
+        openGraph: {
+            title: post!.title,
+            description: post!.description,
+            images: [post!.thumbnailUrl],
+            type: 'article',
+            locale: post!.language,
+            publishedTime: post!.createdAt.toISOString(),
+            modifiedTime: post!.updatedAt.toISOString(),
+        },
+    }
+}
 
 export const Post: React.FC = async ({ params: { locale, postId } }: any) => {
     const post = await PostService.getPost(postId);

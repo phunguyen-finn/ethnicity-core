@@ -18,6 +18,7 @@ export default async function Patterns({ params: { locale } }: Readonly<{
                 items={
                     [
                         { title: <Link href="/">{t('home')}</Link> },
+                        { title: <Link href="/library">{t('library')}</Link> },
                         { title: t('patterns') }
                     ]
                 } />
