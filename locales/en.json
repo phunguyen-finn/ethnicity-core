@@ -127,5 +127,34 @@
         "createdAt": "Uploaded on",
         "category": "Category",
         "contact": "Contact"
+    },
+    "products": {
+        "createdAt": "Uploaded on",
+        "noMoreProducts": "You've reached the end",
+        "noItems": "Sorry, we're still updating the store... Come back later!",
+        "loading": "Loading...",
+        "contact": "Contact",
+        "purchase": "Purchase"
+    },
+    "breadcrumbs": {
+        "home": "Home",
+        "store": "Store",
+        "library": "Library",
+        "patterns": "Patterns",
+        "products": "Products",
+        "posts": "Posts",
+        "collections": "Collections"
+    },
+    "collections": {
+        "noMoreCollections": "You've reached the end",
+        "noItems": "Sorry, we're still updating this category... Come back later!",
+        "loading": "Loading...",
+        "createdAt": "Created on",
+        "contact": "Contact",
+        "collectionsPatterns": "Collection's patterns",
+        "preserve": "Preserve",
+        "develop": "Develop",
+        "apply": "Apply",
+        "illustrate": "Illustrate"
     }
 }

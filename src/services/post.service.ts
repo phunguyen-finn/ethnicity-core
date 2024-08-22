@@ -90,7 +90,7 @@ export const PostService = {
     },
     getPost: async (id: string): Promise<Post | null> => {
         const post = await getDoc(doc(Db, "posts", id));
-        if (!post.exists()) return Promise.reject(new Error("Resource not found"));
+        if (!post.exists()) return Promise.resolve(null);
         return { id: post.id, ...post.data(), createdAt: post.data().createdAt.toDate(), updatedAt: post.data().updatedAt.toDate() } as any;
     },
 };

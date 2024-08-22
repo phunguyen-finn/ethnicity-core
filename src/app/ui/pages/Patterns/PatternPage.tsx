@@ -15,7 +15,7 @@ export default function PatternPage({ pattern }: { pattern: Pattern }) {
     return <><div className='flex flex-col h-full sm:grid sm:grid-cols-3 items-left w-full py-6 gap-x-4'>
         <div className='sm:col-span-1'>
             <Badge.Ribbon text={t(pattern.category)} color={patternCategoryToColorMap[pattern.category]}>
-                <Image src={pattern.hdUrl} alt={pattern.name} width={800} height={800} style={{
+                <Image src={pattern.thumbnailUrl} alt={pattern.name} width={800} height={800} style={{
                     width: '100%',
                     height: 'auto',
                 }} />

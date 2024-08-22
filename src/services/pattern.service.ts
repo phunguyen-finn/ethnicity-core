@@ -99,9 +99,9 @@ export const PatternService = {
         })) as any;
         return patterns;
     },
-    getPattern: async (id: string): Promise<Pattern> => {
+    getPattern: async (id: string): Promise<Pattern | null> => {
         const pattern = await getDoc(doc(Db, "patterns", id));
-        if (!pattern.exists()) return Promise.reject(new Error("Resource not found"));
+        if (!pattern.exists()) return Promise.resolve(null);
         return { id: pattern.id, ...pattern.data(), createdAt: pattern.data().createdAt.toDate(), updatedAt: pattern.data().updatedAt.toDate() } as any;
     }
 };

@@ -1,7 +1,7 @@
-import PatternModal from "@/app/ui/pages/Patterns/PatternModal";
-import PatternService from "@/services/pattern.service";
+import ProductModal from "@/app/ui/pages/Products/ProductModal";
+import ProductService, { Product } from "@/services/product.service";
 
-export default async function PatternPage({ params: { patternId } }: { params: { patternId: string } }) {
-    const pattern = await PatternService.getPattern(patternId);
-    return <PatternModal pattern={pattern} />
+export default async function PatternPage({ params: { productId } }: { params: { productId: string } }) {
+    const product = await ProductService.getProduct(productId);
+    return <ProductModal product={product as Product} />
 }

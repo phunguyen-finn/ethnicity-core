@@ -128,5 +128,34 @@
         "createdAt": "Được tải lên vào",
         "category": "Danh mục",
         "contact": "Liên hệ"
+    },
+    "products": {
+        "createdAt": "Được tải lên vào",
+        "noMoreProducts": "Đã hết sản phẩm rồi bạn ơi",
+        "noItems": "Xin lỗi, chúng tôi vẫn đang cập nhật cửa hàng... Quay lại sau nhé!",
+        "loading": "Đang tải...",
+        "contact": "Liên hệ",
+        "purchase": "Mua hàng"
+    },
+    "breadcrumbs": {
+        "home": "Trang chủ",
+        "store": "Cửa hàng",
+        "library": "Thư viện",
+        "patterns": "Hoa văn",
+        "products": "Sản phẩm",
+        "posts": "Bài viết",
+        "collections": "Bộ sưu tập"
+    },
+    "collections": {
+        "noMoreCollections": "Đã hết bộ sưu tập rồi bạn ơi",
+        "noItems": "Xin lỗi, chúng tôi vẫn đang cập nhật mục này... Quay lại sau nhé!",
+        "loading": "Đang tải...",
+        "createdAt": "Được tải lên vào",
+        "contact": "Liên hệ",
+        "collectionsPatterns": "Hoa văn của bộ sưu tập",
+        "preserve": "Bảo tồn",
+        "develop": "Phát triển",
+        "apply": "Ứng dụng",
+        "illustrate": "Minh họa"
     }
 }

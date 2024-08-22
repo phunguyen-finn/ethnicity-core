@@ -83,7 +83,7 @@ export function PatternsList({ initPatterns, locale, initCursor, initHasMore }: 
             />
         }
         {
-            patterns.length > 0 && <div id="scrollableDiv" className="w-full">
+            patterns.length > 0 && <div id="scrollableDiv" className="w-full no-scrollbar">
                 <InfiniteScroll
                     dataLength={patterns.length}
                     next={handleLoadMore}
@@ -96,7 +96,7 @@ export function PatternsList({ initPatterns, locale, initCursor, initHasMore }: 
                     <div className="w-full grid grid-cols-2 min-[400px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 mt-5 sm:gap-2 gap-2">
                         {
                             patterns.map((pattern) => (
-                                <Link href={`/patterns/${pattern.id}`} key={pattern.id} className="col-span-1 aspect-square flex flex-col items-center justify-center relative">
+                                <Link href={`/patterns/${pattern.id}`} key={pattern.id} className="group col-span-1 aspect-square flex flex-col items-center justify-center relative">
                                     <Badge.Ribbon text={t(pattern.category)} color={patternCategoryToColorMap[pattern.category]}>
                                         <div className="w-full h-full">
                                             <Image
@@ -111,7 +111,7 @@ export function PatternsList({ initPatterns, locale, initCursor, initHasMore }: 
                                             />
                                         </div>
                                     </Badge.Ribbon>
-                                    <span className="overflow-hidden text-ellipsis w-full max-w-full max-h-[50px] line-clamp-1 text-center mt-2 text-sm">{pattern.name}</span>
+                                    <span className="group-hover:text-blue-500 overflow-hidden text-ellipsis w-full max-w-full max-h-[50px] line-clamp-1 text-center mt-2 text-sm">{pattern.name}</span>
                                 </Link>
                             ))
                         }
