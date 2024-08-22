@@ -1,7 +1,8 @@
 import { Link } from "@/app/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-export default async function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function Layout({ children, params: { locale } }: Readonly<{ children: React.ReactNode, params: any }>) {
+    unstable_setRequestLocale(locale);
     const t = await getTranslations('patterns');
 
     return <div

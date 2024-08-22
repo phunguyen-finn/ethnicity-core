@@ -2,11 +2,18 @@ import { Link } from "@/app/navigation";
 import { PatternsList } from "@/app/ui/pages/Patterns/PatternsList";
 import PatternService from "@/services/pattern.service";
 import { Breadcrumb } from "antd";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+
+export function generateStaticParams() {
+    return [];
+}
+
+export const revalidate = 300;
 
 export default async function Patterns({ params: { locale } }: Readonly<{
     params: { locale: 'vi' | 'en' }
 }>) {
+    unstable_setRequestLocale(locale);
     const [initPatterns, initCursor, initHasMore] = await PatternService.getPatternsByLanguage(locale as any);
     const t = await getTranslations('breadcrumbs');
 

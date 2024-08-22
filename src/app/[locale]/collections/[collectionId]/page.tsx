@@ -3,12 +3,11 @@ import CollectionPage from "@/app/ui/pages/Collections/CollectionPage";
 import CollectionService, { Collection } from "@/services/collection.service";
 import PatternService from "@/services/pattern.service";
 import { Breadcrumb } from "antd";
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata(
     { params }: any
-): Promise<Metadata> {
+): Promise<any> {
     const collection = await CollectionService.getCollection(params.collectionId);
 
     if (!collection) {
@@ -31,7 +30,9 @@ export async function generateMetadata(
     }
 }
 
-export default async function Page({ params: { collectionId } }: { params: { collectionId: string } }) {
+export default async function Page({ params: { collectionId, locale } }: { params: { collectionId: string, locale: string } }) {
+    unstable_setRequestLocale(locale);
+
     const collection = await CollectionService.getCollection(collectionId);
     const patterns = await PatternService.getPatternsByCollection(collectionId);
 

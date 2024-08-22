@@ -1,7 +1,9 @@
 import { Link } from "@/app/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-export default async function Layout({ children, modal }: Readonly<{ children: React.ReactNode, modal: React.ReactNode }>) {
+export default async function Layout({ children, modal, params: { locale } }: Readonly<{ children: React.ReactNode, modal: React.ReactNode, params: any }>) {
+    unstable_setRequestLocale(locale);
+
     const t = await getTranslations('collections');
     console.log(modal);
     return <div

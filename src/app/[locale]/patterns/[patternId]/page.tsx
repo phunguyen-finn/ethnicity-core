@@ -2,12 +2,11 @@ import { Link, redirect } from "@/app/navigation";
 import PatternPage from "@/app/ui/pages/Patterns/PatternPage";
 import PatternService from "@/services/pattern.service";
 import { Breadcrumb } from "antd";
-import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(
     { params }: any
-): Promise<Metadata> {
+): Promise<any> {
     const pattern = await PatternService.getPattern(params.patternId);
 
     if (!pattern) {

@@ -1,5 +1,5 @@
 import NavigationMenu from "@/app/ui/common/NavigationMenu";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata(
     { params, searchParams }: any,
@@ -17,6 +17,7 @@ export async function generateMetadata(
 export default function Layout({ children, params: { locale }, modal }: Readonly<{
     children: React.ReactNode, params: { locale: 'vi' | 'en' }, modal: React.ReactNode
 }>) {
+    unstable_setRequestLocale(locale);
     return <>
         <NavigationMenu color="black" locale={locale} />
         {children}

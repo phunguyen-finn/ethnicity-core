@@ -17,16 +17,13 @@ export async function generateMetadata({ params }: any): Promise<any> {
     title: params.locale == 'en' ? "Ethnicity Vietnam" : "Ethnicity Việt Nam",
     description: t('recognition.body'),
     robots: 'index, follow',
+    metadataBase: new URL('https://ethnicityviet.com'),
     openGraph: {
       title: "Ethnicity Vietnam",
       description: t('recognition.body'),
       images: ['logo.svg']
     },
   }
-}
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({
@@ -36,8 +33,8 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const messages = await getMessages();
   unstable_setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>

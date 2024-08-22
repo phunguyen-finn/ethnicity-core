@@ -2,11 +2,12 @@ import { Link } from "@/app/navigation";
 import { ProductsList } from "@/app/ui/pages/Products/ProductsList";
 import ProductService from "@/services/product.service";
 import { Breadcrumb } from "antd";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export default async function Patterns({ params: { locale } }: Readonly<{
     params: { locale: 'vi' | 'en' }
 }>) {
+    unstable_setRequestLocale(locale);
     const t = await getTranslations('breadcrumbs');
     const [initProducts, initCursor, initHasMore] = await ProductService.getProductsByLanguage(locale as any);
     return <div

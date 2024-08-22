@@ -1,8 +1,9 @@
 import { Link } from "@/app/navigation";
 import { CollectionsList } from "@/app/ui/pages/Collections/CollectionsList";
+import { locales } from "@/config";
 import CollectionService from "@/services/collection.service";
 import { Breadcrumb } from "antd";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata(
     { params, searchParams }: any,
@@ -17,9 +18,16 @@ export async function generateMetadata(
     }
 }
 
+export function generateStaticParams() {
+    return [];
+}
+
+export const revalidate = 300;
+
 export default async function Collections({ params: { locale } }: Readonly<{
     params: { locale: 'vi' | 'en' }
 }>) {
+    unstable_setRequestLocale(locale);
     const t = await getTranslations('breadcrumbs');
     const [initCollections, initCursor, initHasMore] = await CollectionService.getCollectionsByLanguage(locale as any);
     return <div

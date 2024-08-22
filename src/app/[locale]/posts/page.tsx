@@ -1,7 +1,9 @@
 import PostService from "@/services/post.service";
 import PostsPage from "@/app/ui/pages/Posts/PostsPage";
+import { unstable_setRequestLocale } from "next-intl/server";
 
-export const Posts: React.FC = async ({ params: { locale } }: any) => {
+export default async function Posts({ params: { locale } }: any) {
+    unstable_setRequestLocale(locale);
     const [initPosts, initCursor, initHasMore] = await PostService.getPostsByLang(locale);
 
     return <PostsPage
@@ -11,5 +13,3 @@ export const Posts: React.FC = async ({ params: { locale } }: any) => {
         lang={locale}
     />;
 };
-
-export default Posts;

@@ -2,12 +2,11 @@ import { Link, redirect } from "@/app/navigation";
 import ProductPage from "@/app/ui/pages/Products/ProductPage";
 import ProductService, { Product } from "@/services/product.service";
 import { Breadcrumb } from "antd";
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata(
     { params }: any
-): Promise<Metadata> {
+): Promise<any> {
     const product = await ProductService.getProduct(params.productId);
 
     if (!product) {
@@ -30,7 +29,8 @@ export async function generateMetadata(
     }
 }
 
-export default async function Page({ params: { productId } }: { params: { productId: string } }) {
+export default async function Page({ params: { productId, locale } }: { params: { productId: string, locale: any } }) {
+    unstable_setRequestLocale(locale);
     const product = await ProductService.getProduct(productId);
     const t = await getTranslations('breadcrumbs');
 

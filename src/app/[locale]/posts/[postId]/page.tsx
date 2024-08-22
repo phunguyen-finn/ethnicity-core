@@ -3,6 +3,7 @@ import { redirect } from "@/app/navigation";
 import PostPage from "@/app/ui/pages/Posts/PostPage";
 import sanitizeHtml from 'sanitize-html';
 import { Timestamp } from "firebase/firestore/lite";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata(
     { params }: any
@@ -31,7 +32,8 @@ export async function generateMetadata(
     }
 }
 
-export const Post = async ({ params: { locale, postId } }: any) => {
+export default async function Post({ params: { locale, postId } }: any) {
+    unstable_setRequestLocale(locale);
     const post = await PostService.getPost(postId);
     if (!post || post.language !== locale)
         redirect('/');
@@ -54,5 +56,3 @@ export const Post = async ({ params: { locale, postId } }: any) => {
         morePosts={morePosts.slice(0, 3)}
     />
 };
-
-export default Post;
