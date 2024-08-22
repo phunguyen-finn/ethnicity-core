@@ -44,7 +44,7 @@ export const ProcedureSection: React.FC = () => {
     <div>
       <div className='h-screen w-screen items-center relative min-h-[600px] flex flex-col justify-center overflow-hidden max-w-[1920px] m-auto'>
         <Image
-          src="/images/procedure_background.png"
+          src="/images/procedure_background.jpg"
           layout="fill"
           objectFit="cover"
           objectPosition="top left"

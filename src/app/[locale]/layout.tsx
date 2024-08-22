@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { locales } from "@/config";
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: any): Promise<any> {
   return {
     title: params.locale == 'en' ? "Ethnicity Vietnam" : "Ethnicity Việt Nam",
     description: t('recognition.body'),
+    icon: 'logo.svg',
     robots: 'index, follow',
     metadataBase: new URL('https://ethnicityviet.com'),
     openGraph: {
@@ -41,6 +42,7 @@ export default async function LocaleLayout({
       <NextIntlClientProvider messages={messages}>
         <AntdRegistry>
           <body className={inter.className} style={{ overflowX: 'hidden' }}>
+            <NextTopLoader />
             {children}
           </body>
         </AntdRegistry>

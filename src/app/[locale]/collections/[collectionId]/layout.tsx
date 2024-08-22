@@ -5,7 +5,6 @@ export default async function Layout({ children, modal, params: { locale } }: Re
     unstable_setRequestLocale(locale);
 
     const t = await getTranslations('collections');
-    console.log(modal);
     return <div
         style={{ minHeight: 'max(800px, 100vh)' }}
         className='w-screen overflow-y-auto flex flex-col items-center relative max-w-[1920px] m-auto pt-[100px] pb-[5px] bg-white'>
