@@ -36,13 +36,13 @@ export default function RecognitionSection() {
                                 alt="Decoration"
                                 className="absolute bottom-0 right-0 rotate-180 translate-x-[25%] translate-y-[25%]"
                             />
-                            <p className="font-bold text-xs sm:text-base text-justify relative z-10">{t('head')}</p>
-                            <p className="mt-5 text-xs sm:text-base text-justify relative z-10">{t('body')}</p>
+                            <p className="font-bold text-xs sm:text-base text-justify relative z-[5]">{t('head')}</p>
+                            <p className="mt-5 text-xs sm:text-base text-justify relative z-[5]">{t('body')}</p>
                         </div>
 
                         <div>
                             <div className="w-full flex flex-col items-center mt-5">
-                                <h3 className="relative z-10">{t('presentedAt')}</h3>
+                                <h3 className="relative z-[5]">{t('presentedAt')}</h3>
                                 <Image
                                     src="/images/presented_at.png"
                                     alt="Featured on"
@@ -51,7 +51,7 @@ export default function RecognitionSection() {
                                 />
                             </div>
                             <div className="w-full flex flex-col items-center mt-5">
-                                <h3 className="relative z-10">{t('featuredOn')}</h3>
+                                <h3 className="relative z-[5]">{t('featuredOn')}</h3>
                                 <Image
                                     src="/images/featured_on.png"
                                     alt="Featured on"
@@ -60,7 +60,7 @@ export default function RecognitionSection() {
                                 />
                             </div>
                             <div className="w-full flex flex-col items-center mt-5">
-                                <h3 className="relative z-10">{t('partnerWith')}</h3>
+                                <h3 className="relative z-[5]">{t('partnerWith')}</h3>
                                 <Image
                                     src="/images/partner_with.png"
                                     alt="Featured on"
