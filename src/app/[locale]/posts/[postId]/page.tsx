@@ -3,11 +3,10 @@ import { redirect } from "@/app/navigation";
 import PostPage from "@/app/ui/pages/Posts/PostPage";
 import sanitizeHtml from 'sanitize-html';
 import { Timestamp } from "firebase/firestore/lite";
-import { Metadata } from "next";
 
 export async function generateMetadata(
     { params }: any
-): Promise<Metadata> {
+): Promise<any> {
     const post = await PostService.getPost(params.postId);
 
     if (!post) {
@@ -32,7 +31,7 @@ export async function generateMetadata(
     }
 }
 
-export const Post: React.FC = async ({ params: { locale, postId } }: any) => {
+export const Post = async ({ params: { locale, postId } }: any) => {
     const post = await PostService.getPost(postId);
     if (!post || post.language !== locale)
         redirect('/');

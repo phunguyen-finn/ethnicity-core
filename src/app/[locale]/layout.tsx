@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
-import { Metadata } from "next";
 import "@/app/globals.css";
 import { getMessages, getTranslations } from "next-intl/server";
 import "slick-carousel/slick/slick.css";
@@ -11,7 +10,7 @@ import { locales } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<any> {
   const t = await getTranslations('home');
 
   return {

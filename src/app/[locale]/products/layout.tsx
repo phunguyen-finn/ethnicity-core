@@ -1,11 +1,10 @@
 import NavigationMenu from "@/app/ui/common/NavigationMenu";
-import { Metadata, ResolvingMetadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(
     { params, searchParams }: any,
-    parent: ResolvingMetadata
-): Promise<Metadata> {
+    parent: any
+): Promise<any> {
     const t = await getTranslations('breadcrumbs');
     const parentMetadata: any = await parent;
 

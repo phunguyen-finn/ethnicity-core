@@ -3,12 +3,11 @@ import { CollectionsList } from "@/app/ui/pages/Collections/CollectionsList";
 import CollectionService from "@/services/collection.service";
 import { Breadcrumb } from "antd";
 import { getTranslations } from "next-intl/server";
-import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateMetadata(
     { params, searchParams }: any,
-    parent: ResolvingMetadata
-): Promise<Metadata> {
+    parent: any
+): Promise<any> {
     const t = await getTranslations('breadcrumbs');
     const parentMetadata: any = await parent;
 

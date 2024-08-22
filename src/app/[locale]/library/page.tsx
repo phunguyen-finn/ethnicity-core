@@ -2,22 +2,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/app/navigation";
 
-import { Metadata, ResolvingMetadata } from "next";
-import { getTranslations } from "next-intl/server";
-
-export async function generateMetadata(
-    { params, searchParams }: any,
-    parent: ResolvingMetadata
-): Promise<Metadata> {
-    const t = await getTranslations('breadcrumbs');
-    const parentMetadata: any = await parent;
-
-    return {
-        ...parentMetadata,
-        title: t('library'),
-    }
-}
-
 export const Library: React.FC = () => {
     const t = useTranslations('library');
 
