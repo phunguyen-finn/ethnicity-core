@@ -16,13 +16,12 @@ export async function generateMetadata({ params }: any): Promise<any> {
   return {
     title: params.locale == 'en' ? "Ethnicity Vietnam" : "Ethnicity Việt Nam",
     description: t('recognition.body'),
-    icon: 'logo.svg',
+    icon: '/logo.svg',
     robots: 'index, follow',
-    metadataBase: new URL('https://ethnicityviet.com'),
     openGraph: {
       title: "Ethnicity Vietnam",
       description: t('recognition.body'),
-      images: ['logo.svg']
+      images: ['/logo.svg']
     },
   }
 }
