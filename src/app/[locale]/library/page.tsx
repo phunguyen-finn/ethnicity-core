@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/app/navigation";
 
-export const Library: React.FC = () => {
+export default function Page() {
     const t = useTranslations('library');
 
     const boxItems = [
@@ -81,5 +81,3 @@ export const Library: React.FC = () => {
         </div>
     );
 };
-
-export default Library;
