@@ -10,7 +10,7 @@ export default function RecognitionSection() {
 
     return (
         <div>
-            <div className='h-screen w-screen items-center relative min-h-[600px] flex flex-col justify-center overflow-hidden max-w-[1920px] m-auto bg-white'>
+            <div className='h-screen w-screen items-center relative min-h-[900px] flex flex-col justify-center overflow-hidden max-w-[1920px] m-auto bg-white'>
                 <Image
                     src="/images/recognition_decoration.svg"
                     layout="fill"

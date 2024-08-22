@@ -53,7 +53,7 @@ export default function WorkSection({ handleWheel }: any) {
                     alt="Decoration"
                     width={1684}
                     height={318}
-                    className="h-1/2 w-auto md:w-full md:h-auto my-[20px] rounded-3xl"
+                    className="h-auto w-full md:w-full md:h-auto my-[20px] rounded-3xl"
                 />
                 <div className="w-full m-auto relative">
                     <div className="absolute w-full h-full t-0 flex flex-row justify-center z-10">

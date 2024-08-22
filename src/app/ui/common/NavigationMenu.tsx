@@ -63,7 +63,7 @@ export default function NavigationMenu({ color, locale, background }: { color: '
     return <div
         className={
             clsx("flex flex-row w-screen h-24 sm:h-24 justify-between px-6 sm:px-12 font-medium text-lg fixed top-0 left-0 z-10 max-w-[1920px] m-auto left-[50%] -translate-x-1/2",
-                (background && color == 'white') ? 'bg-gradient-to-b from-slate-400 to-transparent' : null
+                (background && color == 'white') ? 'bg-gradient-to-b from-slate-400 to-transparent items-center' : null
             )}>
         <>
             <Image
@@ -71,7 +71,7 @@ export default function NavigationMenu({ color, locale, background }: { color: '
                 width={200}
                 height={76}
                 alt='Ethnicity Vietnam logo'
-                style={{ filter: `brightness(${color == 'black' ? '100%' : '1000%'})` }}
+                style={{ filter: `brightness(${color == 'black' ? '100%' : '2000%'})` }}
                 className="hidden lg:block transition-all duration-1000 cursor-pointer"
                 onClick={() => router.push('/')}
             />
@@ -84,8 +84,8 @@ export default function NavigationMenu({ color, locale, background }: { color: '
         <>
             <Image
                 onClick={() => router.push('/')}
-                className="cursor-pointer block lg:hidden transition-all duration-1000" src="/logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '100%' : '1000%'})` }} />
-            <div className="flex flex-row justify-end w-1/2 items-center block lg:hidden transition-all duration-1000" style={{ filter: `brightness(${color == 'black' ? '0' : '1000%'})` }} >
+                className="cursor-pointer block lg:hidden transition-all duration-1000" src="/logo.svg" width={130} height={50} alt='Ethnicity Vietnam logo' style={{ filter: `brightness(${color == 'black' ? '100%' : '2000%'})` }} />
+            <div className="flex flex-row justify-end w-1/2 items-center block lg:hidden transition-all duration-1000" style={{ filter: `brightness(${color == 'black' ? '0' : '2000%'})` }} >
                 <Burger onClick={showDrawer} className="cursor-pointer" />
             </div>
             <Drawer onClose={onClose} open={open} width={200} styles={{ body: { padding: 0 } }}>
