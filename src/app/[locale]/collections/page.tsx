@@ -30,6 +30,7 @@ export default async function Collections({ params: { locale } }: Readonly<{
             <Breadcrumb items={
                 [
                     { title: <Link href="/">{t('home')}</Link> },
+                    { title: <Link href="/library">{t('library')}</Link> },
                     { title: t('collections') }
                 ]
             } />

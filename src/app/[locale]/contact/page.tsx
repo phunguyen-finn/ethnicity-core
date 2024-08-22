@@ -12,6 +12,22 @@ import sendEmail from "@/services/mail.service";
 import { useState } from "react";
 import { Link } from "@/app/navigation";
 
+import { Metadata, ResolvingMetadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata(
+    { params, searchParams }: any,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const t = await getTranslations('breadcrumbs');
+    const parentMetadata: any = await parent;
+
+    return {
+        ...parentMetadata,
+        title: t('contact'),
+    }
+}
+
 export default function Contact({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
     const t = useTranslations('contact');
     const [form] = Form.useForm();
