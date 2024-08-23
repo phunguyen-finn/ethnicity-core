@@ -43,7 +43,7 @@ export default function PostsPage({ initPosts, initCursor, initHasMore, lang }: 
                         endMessage={<Divider plain>{t('noMorePosts')}</Divider>}
                         scrollableTarget="scrollableDiv"
                     >
-                        <div className="hidden md:grid md:w-8/12 grid-cols-3 lg:w-[700px] gap-3">
+                        <div className="hidden md:grid grid-cols-3 w-full gap-3">
                             {
                                 posts.slice(0, 3).map(post => (
                                     <Link key={post.id + "latest"} href={`/posts/${post.id}`} className="group col-span-1 aspect-square relative">
