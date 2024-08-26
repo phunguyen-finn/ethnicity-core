@@ -9,7 +9,6 @@ import Divider from "antd/es/divider";
 import { SmileOutlined } from "@ant-design/icons";
 import Result from "antd/es/result";
 import { Link } from "@/app/navigation";
-import Badge from "antd/es/badge";
 import ProductService, { LANGUAGE, Product } from "@/services/product.service";
 
 

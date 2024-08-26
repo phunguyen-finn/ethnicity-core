@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import Modal from "antd/es/modal";
-import PatternPage from './ProductPage';
+import ProductPage from './ProductPage';
 import { Product } from '@/services/product.service';
 
 export default function ProductModal({ product }: { product: Product }) {
@@ -19,6 +19,6 @@ export default function ProductModal({ product }: { product: Product }) {
         centered
         width="min(calc(100vw - 32px), 800px)"
     >
-        <PatternPage product={product} />
+        <ProductPage product={product} />
     </Modal >;
 }
