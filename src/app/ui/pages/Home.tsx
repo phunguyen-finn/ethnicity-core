@@ -13,7 +13,7 @@ const navTheme: ('white' | 'black')[] = ["white", "black", "white", "black", "bl
 
 export default function HomePage({ locale }: any) {
     const [section, setSection] = useState(0);
-    const isBreakPoint = useMediaQuery(600)
+    const isBreakPoint = useMediaQuery(800);
     const sliderRef = useRef<any>(null);
 
     const handleWheel = useCallback((e: WheelEvent) => {

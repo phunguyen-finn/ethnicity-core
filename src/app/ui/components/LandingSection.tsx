@@ -15,9 +15,7 @@ export default function LandingSection() {
                     vertical
                     autoplaySpeed={2000}
                     arrows={false}
-                    autoplay={false}
-                    draggable={true}
-                    verticalSwiping={true}
+                    autoplay={true}
                     pauseOnHover={false}
                     adaptiveHeight={true}
                     className='lg:w-10/12 2xl:w-8/12 px-4 sm:px-8 xl:px-10 overflow-hidden text-clip'
