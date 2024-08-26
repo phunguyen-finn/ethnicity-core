@@ -41,7 +41,7 @@ export default async function LocaleLayout({
       <NextIntlClientProvider messages={messages}>
         <AntdRegistry>
           <body className={inter.className} style={{ overflowX: 'hidden' }}>
-            <NextTopLoader />
+            <NextTopLoader showSpinner={false} />
             {children}
           </body>
         </AntdRegistry>
