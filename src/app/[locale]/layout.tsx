@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import NextTopLoader from 'nextjs-toploader';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default async function LocaleLayout({
           <body className={inter.className} style={{ overflowX: 'hidden' }}>
             <NextTopLoader showSpinner={false} />
             {children}
+            <SpeedInsights />
           </body>
         </AntdRegistry>
       </NextIntlClientProvider>
