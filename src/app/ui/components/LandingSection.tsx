@@ -36,6 +36,7 @@ export default function LandingSection() {
                 layout="fill"
                 objectPosition="bottom left"
                 className="absolute -z-10"
+                priority
             />
             <Image
                 src="/images/landing_pattern.png"
@@ -43,6 +44,7 @@ export default function LandingSection() {
                 width={915}
                 height={764}
                 className='w-8/12 -right-[15px] sm:w-5/12 absolute lg:w-5/12 sm:right-[50px] h-auto'
+                priority
             />
         </div>
     </div>
