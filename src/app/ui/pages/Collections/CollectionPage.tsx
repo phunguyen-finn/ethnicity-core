@@ -20,7 +20,7 @@ export default function CollectionPage({ collection, patterns }: { collection: C
                 height: 'auto',
             }} />
         </div>
-        <div className='sm:col-span-2 flex flex-col break-all'>
+        <div className='sm:col-span-2 flex flex-col'>
             <h1 className='mt-3 font-bold '>{collection.name}</h1>
             <p className='text-gray-600'>{t('createdAt')} {collection.createdAt.toLocaleDateString()}</p>
             <Divider style={{ margin: '10px 0px' }} />

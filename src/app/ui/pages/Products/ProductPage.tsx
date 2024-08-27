@@ -16,7 +16,7 @@ export default function ProductPage({ product }: { product: Product }) {
                 height: 'auto',
             }} />
         </div>
-        <div className='sm:col-span-2 flex flex-col break-all'>
+        <div className='sm:col-span-2 flex flex-col'>
             <h1 className='mt-3 font-bold '>{product.name}</h1>
             <p className='text-gray-600'>{t('products.createdAt')} {product.createdAt.toLocaleDateString()}</p>
             <Divider style={{ margin: '10px 0px' }} />

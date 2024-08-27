@@ -21,7 +21,7 @@ export default function PatternPage({ pattern }: { pattern: Pattern }) {
                 }} />
             </Badge.Ribbon>
         </div>
-        <div className='sm:col-span-2 flex flex-col break-all'>
+        <div className='sm:col-span-2 flex flex-col'>
             <h1 className='mt-3 font-bold '>{pattern.name}</h1>
             <p className='text-gray-600'>{t('createdAt')} {pattern.createdAt.toLocaleDateString()}</p>
             <Divider style={{ margin: '10px 0px' }} />
