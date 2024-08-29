@@ -55,10 +55,11 @@ export const PostService = {
         if (posts.length === 0) return [[], undefined, false];
         return [posts, posts[posts.length - 1].createdAt, hasMore];
     },
-    getPostsByCategory: async (category: POST_CATEGORY): Promise<Post[]> => {
+    getPostsByCategoryAndLang: async (category: POST_CATEGORY, lang: LANGUAGE): Promise<Post[]> => {
         const q = query(collection(Db, "posts"),
             where("category", "==", category),
             where("status", "==", POST_STATUS.PUBLISHED),
+            where("language", "==", lang),
             orderBy("createdAt", "desc"));
         const snapshot = await getDocs(q);
         const posts = snapshot.docs.map(doc => ({

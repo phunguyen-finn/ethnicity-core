@@ -10,13 +10,13 @@ import { Link } from "@/app/navigation";
 import { SmileOutlined } from "@ant-design/icons";
 import Result from "antd/es/result"
 
-export default function WorkSection({ handleWheel }: any) {
+export default function WorkSection({ handleWheel, locale }: any) {
     const t = useTranslations('home.work');
     const [posts, setPosts] = useState<Post[]>([]);
     const [open, setOpen] = useState(false);
 
     const handleClick = (category: POST_CATEGORY) => {
-        PostService.getPostsByCategory(category).then((posts) => {
+        PostService.getPostsByCategoryAndLang(category, locale).then((posts) => {
             window.removeEventListener("wheel", handleWheel, true);
             setPosts(posts);
             setOpen(true);

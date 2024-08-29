@@ -38,7 +38,7 @@ export default function HomePage({ locale }: any) {
             isBreakPoint && <>
                 <NavigationMenu color="white" background locale={locale as any} />
                 <LandingSection />
-                <WorkSection />
+                <WorkSection locale={locale} />
                 <ProcedureSection />
                 <RecognitionSection />
             </>
@@ -60,7 +60,7 @@ export default function HomePage({ locale }: any) {
                     className='h-screen w-screen relative overflow-hidden'
                 >
                     <LandingSection />
-                    <WorkSection handleWheel={handleWheel} />
+                    <WorkSection handleWheel={handleWheel} locale={locale} />
                     <ProcedureSection />
                     <RecognitionSection />
                 </Slider>
