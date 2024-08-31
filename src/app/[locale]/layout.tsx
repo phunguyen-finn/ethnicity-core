@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
-import { NextIntlClientProvider } from 'next-intl';
 import "@/app/globals.css";
-import { getMessages, getTranslations } from "next-intl/server";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getMessages, getTranslations } from "next-intl/server";
+import { Inter } from "next/font/google";
+import { NextIntlClientProvider } from 'next-intl';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import NextTopLoader from 'nextjs-toploader';
