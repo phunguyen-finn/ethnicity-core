@@ -13,6 +13,7 @@ const nextConfig = {
                 pathname: '/v0/b/ethnicityviet-47a8d.appspot.com/o/**',
             },
         ],
+        unoptimized: true
     }
 };
 
