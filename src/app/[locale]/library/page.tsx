@@ -44,27 +44,27 @@ export default function Page() {
                     </div>
                 </div>
                 <div className="w-full md:w-4/12 md:ml-5">
-                    <Link href="/patterns" className="flex justify-center items-center py-1 w-full bg-white/[0.3] rounded-full mt-5 md:mt-0 md:h-[150px] md:rounded-lg hover:border-white hover:border-[1px]">
+                    <Link href="/patterns" className="h-[75px] flex justify-center px-3 items-center py-1 w-full bg-white/[0.3] rounded-full mt-5 md:mt-0 md:h-[150px] md:rounded-lg hover:border-white hover:border-[1px]">
                         <Image
                             src="/images/patterns_button.png"
                             alt="patterns icon"
                             width={50}
                             height={50}
                             style={{
-                                height: "full",
+                                height: "70%",
                                 width: "auto",
                             }}
                         />
                         <h3 className="text-white ml-5">{t('seePatterns')}</h3>
                     </Link>
-                    <Link href="/collections" className="flex justify-center items-center py-1 w-full bg-white/[0.3] rounded-full mt-5 md:h-[150px] md:rounded-lg hover:border-white hover:border-[1px] mb-5">
+                    <Link href="/collections" className="h-[75px] flex justify-center px-3 items-center py-1 w-full bg-white/[0.3] rounded-full mt-5 md:h-[150px] md:rounded-lg hover:border-white hover:border-[1px] mb-5">
                         <Image
                             src="/images/collections_button.png"
                             alt="collections icon"
                             width={50}
                             height={50}
                             style={{
-                                height: "full",
+                                height: "70%",
                                 width: "auto",
                             }}
                         />
